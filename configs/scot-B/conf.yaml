@@ -1,0 +1,48 @@
+callbacks:
+  checkpoint:
+    dirpath: ./checkpoints/all/easy
+    filename: scot-B-{epoch:02d}
+    mode: min
+    monitor: val_loss_full
+    save_top_k: -1
+    every_n_epochs: 100
+  early_stopping:
+    monitor: val_loss_full
+    patience: 1000
+  validation_logging:
+    plot_path: ./plots/
+data:
+  batch_size: 8
+  equation: ns
+  file_path_test_x: ${DATA_DIR}/all_ldc_test_x.npz
+  file_path_test_y: ${DATA_DIR}/all_ldc_test_y.npz
+  file_path_train_x: ${DATA_DIR}/all_ldc_train_x.npz
+  file_path_train_y: ${DATA_DIR}/all_ldc_train_y.npz
+  inputs: sdf
+  shuffle: true
+  subsample: false
+  train_split: 0.8
+  type: field
+  val_split: 0.2
+model:
+  depths:
+  - 8
+  - 8
+  - 8
+  - 8
+  embed_dim: 96
+  in_channels: 2
+  log_file: log_scot-B_test.txt
+  lr: 0.0005
+  out_channels: 3
+  plot_path: plots/scot-B/all/easy
+sweep_parameters:
+  seed:
+    values:
+    - 0
+trainer:
+  accelerator: gpu
+  devices: 1
+  log_every_n_steps: 10
+  max_epochs: 200
+  seed: 0

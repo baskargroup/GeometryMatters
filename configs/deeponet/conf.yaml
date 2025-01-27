@@ -1,0 +1,51 @@
+callbacks:
+  checkpoint:
+    dirpath: ./checkpoints/all/easy
+    filename: deeponet-{epoch:02d}
+    mode: min
+    monitor: val_loss_full
+    save_top_k: 1
+  early_stopping:
+    monitor: val_loss_full
+    patience: 1000
+  validation_logging:
+    plot_path: ./plots/
+data:
+  batch_size: 8
+  equation: ns
+  file_path_test_x: ${DATA_DIR}/all_ldc_test_x.npz
+  file_path_test_y: ${DATA_DIR}/all_ldc_test_y.npz
+  file_path_train_x: ${DATA_DIR}/all_ldc_train_x.npz
+  file_path_train_y: ${DATA_DIR}/all_ldc_train_y.npz
+  inputs: sdf
+  shuffle: true
+  subsample: false
+  train_split: 0.8
+  type: collocation
+  val_split: 0.2
+model:
+  branch_net_layers:
+  - 512
+  - 512
+  - 512
+  input_channels_func: 2
+  input_channels_loc: 2
+  log_file: log_deeponet_lr=0.001_batch=5.txt
+  lr: 0.0001
+  modes: 128
+  output_channels: 3
+  plot_path: plots/deeponet/all/easy
+  trunk_net_layers:
+  - 256
+  - 256
+  - 256
+sweep_parameters:
+  seed:
+    values:
+    - 0
+trainer:
+  accelerator: gpu
+  devices: 1
+  log_every_n_steps: 10
+  max_epochs: 200
+  seed: 0
