@@ -28,22 +28,35 @@ The dataset is licensed under **CC-BY-NC-4.0** and serves as a benchmark for the
 - **Fields:** Velocity (u, v) and Pressure (p)
 - **Stored as:** Numpy tensors (`.npz` format)
 
+### Supported Models
+- **Neural Operators:** `FNO, CNO, WNO, DeepONet, Geometric-DeepONet`
+- **Vision Transformers:** `scOT-T, Poseidon-T, scOT-B, Poseidon-B, scOT-L, Poseidon-L`
+
 ## Installation
-To set up the environment and install dependencies:
+To set up the environment and install dependencies for **Neural Operators**:
 ```bash
 python3 -m venv sciml
 source sciml/bin/activate 
 pip install -r venv_requirements.txt
 ```
 
+To set up the environment and install dependencies for **Vision Transformers**:
+```bash
+python3 -m venv scot
+source scot/bin/activate 
+pip install -r scot_requirements.txt
+```
+
 ## Model Training
-To train a model, run the following command:
+To train a **Neural Operator**, run the following command:
 ```bash
 python3 main_sweep.py --model "model_name" --sweep
 ```
-### Supported Models
-- **Neural Operators:** `FNO, CNO, WNO, DeepONet, Geometric-DeepONet`
-- **Vision Transformers:** `scOT-T, Poseidon-T, scOT-B, Poseidon-B, scOT-L, Poseidon-L`
+
+To train a **Vision Transformer**, run the following command:
+```bash
+python3 scot_sweep.py --model "model_name" --sweep
+```
 
 Before training, you need to specify the dataset paths in the **configurations** (YAML files):
 ```yaml

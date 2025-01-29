@@ -157,14 +157,14 @@ threadpoolctl==3.5.0
 tifffile==2024.8.24
 tokenizers==0.13.3
 tomli==2.0.1
-torch==2.0.1+cu118
+torch==2.0.1
 torch-harmonics==0.6.5
-torchaudio==2.0.2+cu118
+torchaudio==2.0.2
 torchdata==0.6.1
 torchgpipe==0.0.7
 torchmetrics==1.4.0.post0
 torchtext==0.15.2
-torchvision==0.15.2+cu118
+torchvision==0.15.2
 tqdm==4.66.4
 transformers==4.29.2
 triton==2.0.0
@@ -172,7 +172,7 @@ typer==0.12.3
 typing_extensions==4.12.2
 tzdata==2024.1
 urllib3==2.2.2
-wandb==0.17.9
+wandb==0.14.2
 Werkzeug==3.0.3
 yarl==1.9.4
 zarr==2.18.2

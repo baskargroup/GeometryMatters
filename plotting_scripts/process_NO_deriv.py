@@ -26,7 +26,6 @@ def load_model(model_name, checkpoint_path, config):
         'uno': UNO,
         'wno': WNO,
         'deeponet': DeepONet,
-        'pod-deeponet': PODDeepONet,
         'geometric-deeponet': GeometricDeepONet
     }
     if model_name not in model_dict:
