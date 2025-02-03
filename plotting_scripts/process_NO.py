@@ -9,7 +9,6 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 from pytorch_lightning import Trainer
 from models.fno.fno import FNO
 from models.cno.cno import cno
-from models.uno.uno import UNO
 from models.wno.wno import WNO
 from models.deeponet.deeponet import DeepONet
 from models.geometric_deeponet.geometric_deeponet import GeometricDeepONet
@@ -23,7 +22,6 @@ def load_model(model_name, checkpoint_path, config):
     model_dict = {
         'fno': FNO,
         'cno': cno,
-        'uno': UNO,
         'wno': WNO,
         'deeponet': DeepONet,
         'geometric-deeponet': GeometricDeepONet
@@ -161,7 +159,6 @@ def main(model_name, config_path, checkpoint_path):
         file_path_x=config.data.file_path_test_x,
         file_path_y=config.data.file_path_test_y,
         data_type=config.data.type,
-        equation=config.data.equation, 
         inputs='sdf'
     )
 
@@ -169,7 +166,6 @@ def main(model_name, config_path, checkpoint_path):
         file_path_x=config.data.file_path_test_x,
         file_path_y=config.data.file_path_test_y,
         data_type=config.data.type,
-        equation=config.data.equation, 
         inputs=config.data.inputs
     )
     

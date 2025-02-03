@@ -8,7 +8,7 @@ from pytorch_lightning import Trainer
 from omegaconf import OmegaConf
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from models.scot.scOT import scOT
-from data.partial_dataset2 import LidDrivenDataset
+from data.dataset import LidDrivenDataset
 from residual_m3_function import ResidualLoss
 
 torch.cuda.empty_cache()
@@ -157,7 +157,6 @@ def main(model_name, config_path, checkpoint_path):
         file_path_x=config.data.file_path_test_x,
         file_path_y=config.data.file_path_test_y,
         data_type=config.data.type,
-        equation=config.data.equation, 
         inputs='sdf'
     )
 
@@ -166,7 +165,6 @@ def main(model_name, config_path, checkpoint_path):
         file_path_x=config.data.file_path_test_x,
         file_path_y=config.data.file_path_test_y,
         data_type=config.data.type,
-        equation=config.data.equation, 
         inputs=config.data.inputs
     )
     
