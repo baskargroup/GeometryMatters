@@ -33,7 +33,7 @@ model:
   log_file: log_deeponet_lr=0.001_batch=5.txt
   lr: 0.0001
   modes: 128
-  output_channels: 3
+  out_channels: 3
   plot_path: plots/deeponet/all/easy
   trunk_net_layers:
   - 256

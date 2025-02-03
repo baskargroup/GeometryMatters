@@ -115,6 +115,9 @@ def main(model_name, config=None):
     wandb_logger.experiment.config.update(OmegaConf.to_container(config, resolve=True))
     wandb_logger.experiment.save(config_path, policy="now")
 
+    checkpoint_dir = os.path.join(wandb_logger.experiment.dir, f'{model_name}_checkpoints')
+    os.makedirs(checkpoint_dir, exist_ok=True)  # Ensure directory exists
+
     checkpoint_callback = ModelCheckpoint(
         monitor=config.callbacks.checkpoint.monitor,
         dirpath=os.path.join(wandb_logger.experiment.dir, f'{model_name}_checkpoints'),

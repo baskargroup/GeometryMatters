@@ -37,13 +37,15 @@ To set up the environment and install dependencies for **Neural Operators**:
 ```bash
 python3 -m venv sciml
 source sciml/bin/activate 
+pip install --upgrade pip setuptools wheel Cython
 pip install -r venv_requirements.txt
 ```
 
 To set up the environment and install dependencies for **Vision Transformers**:
 ```bash
 python3 -m venv scot
-source scot/bin/activate 
+source scot/bin/activate
+pip install --upgrade pip setuptools wheel Cython 
 pip install -r scot_requirements.txt
 ```
 

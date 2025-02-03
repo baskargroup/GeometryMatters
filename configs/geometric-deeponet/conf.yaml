@@ -34,7 +34,7 @@ model:
   log_file: log_geometric-deeponet_lr=0.001_batch=5.txt
   lr: 0.0001
   modes: 64
-  output_channels: 3
+  out_channels: 3
   plot_path: plots/geometric-deeponet/all/easy
   trunk_net_layers:
   - 256
