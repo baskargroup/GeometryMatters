@@ -121,7 +121,7 @@ def main(model_name, config=None):
 
     checkpoint_callback = ModelCheckpoint(
         monitor=config.callbacks.checkpoint.monitor,
-        dirpath=os.path.join(wandb_logger.experiment.dir, f'{model_name}_checkpoints'),
+        dirpath=checkpoint_dir,
         filename=config.callbacks.checkpoint.filename,
         save_top_k=config.callbacks.checkpoint.save_top_k,
         mode=config.callbacks.checkpoint.mode,
