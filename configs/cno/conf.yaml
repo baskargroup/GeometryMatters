@@ -13,10 +13,10 @@ callbacks:
 data:
   batch_size: 16
   equation: ns
-  file_path_test_x: ${DATA_DIR}/all_ldc_test_x.npz
-  file_path_test_y: ${DATA_DIR}/all_ldc_test_y.npz
-  file_path_train_x: ${DATA_DIR}/all_ldc_train_x.npz
-  file_path_train_y: ${DATA_DIR}/all_ldc_train_y.npz
+  file_path_test_x: /work/mech-ai-scratch/arabeh/data_prep_ns/LDC_NS_2D/processed/easy/all_ldc_test_x.npz
+  file_path_test_y: /work/mech-ai-scratch/arabeh/data_prep_ns/LDC_NS_2D/processed/easy/all_ldc_test_y.npz
+  file_path_train_x: /work/mech-ai-scratch/arabeh/data_prep_ns/LDC_NS_2D/processed/easy/all_ldc_train_x.npz
+  file_path_train_y: /work/mech-ai-scratch/arabeh/data_prep_ns/LDC_NS_2D/processed/easy/all_ldc_train_y.npz
   inputs: sdf
   shuffle: true
   subsample: false
@@ -24,11 +24,11 @@ data:
   type: field
   val_split: 0.2
 model:
-  N_res: 6
+  N_res: 4
   in_channels: 2
   in_size: 512
-  log_file: log_cno_lr=0.001_batch=5.txt
-  lr: 0.001
+  log_file: log_cno.txt
+  lr: 0.001 
   n_layers: 4
   out_channels: 3
   out_size: 512

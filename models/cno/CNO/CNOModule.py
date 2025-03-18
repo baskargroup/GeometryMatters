@@ -501,7 +501,7 @@ class CNO(nn.Module):
             skip.append(y)
             
             # Apply (D) block
-            x = self.encoder[i](x)   
+            x = self.encoder[i](y)   
         
         #----------------------------------------------------------------------
         
